@@ -5,55 +5,60 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Impulse Dynamics - About</title>
+	<meta name="description" content="Impulse Dynamics - About" />
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+	<div class="text-[#c9c9c9] uppercase font-bold text-2xl">
+        we are
+        <div class="text-[#eb5060] font-thin text-4xl">
+            impulse dynamics
+        </div>
+	</div>
+    <div class="flex">
+        <div class="graph__wrapper">
+          <svg width="315px" height="107px" viewBox="0 0 315 107" version="1.1" style="overflow:visible">
+            <g  id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
 
-		to your new<br />SvelteKit app
-	</h1>
+              <path id="Path-1" class="path" fill="none" stroke="#c9c9c9" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="10" d="M489,11,211.5,41,5s172.5-24.5,86,57,0,2.1c0,0,1.4"/>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
+              <polyline id="arrow" points="0,-9 18,0 0,9,5,0" fill="#c9c9c9">
+                <animateMotion rotate="auto" begin="1s" dur="1.6s" repeatCount="1" fill="freeze">
+                  <mpath xlink:href="#Path-1" />
+                </animateMotion>
+              </polyline>
 
-	<Counter />
+            </g>
+          </svg>
+            <div class="dot" />
+        </div>
+    </div>
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
+.dot {
+    height: 12vw;
+    width: 12vw;
+    background-color: #eb5060;
+    border-radius: 50%;
+    display: inline-block;
+}
+.path { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: dash 2s linear forwards; animation-iteration-count: 1;}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.dashed{
+  stroke-dasharray: 5,12;
 
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+}
+#arrow{animation: arrow 1s linear forwards; opacity:0;}
+@keyframes arrow {
+  to {
+    opacity: 1;
+  }
+}
+.ifrm{border:none; width:100%;margin-top:50px;}
 </style>
